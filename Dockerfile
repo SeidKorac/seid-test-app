@@ -4,8 +4,15 @@ ARG SHOPIFY_API_KEY
 ENV SHOPIFY_API_KEY=$SHOPIFY_API_KEY
 
 RUN apk update && apk add --update nodejs npm \
-    composer php-pdo_sqlite php-pgsql php-pdo_mysql php-pdo_pgsql php-simplexml php-fileinfo php-dom php-tokenizer php-xml php-xmlwriter php-session \
+    composer php-pdo_sqlite php-pdo_mysql php-pdo_pgsql php-simplexml php-fileinfo php-dom php-tokenizer php-xml php-xmlwriter php-session \
     openrc bash nginx
+
+# add php_pgsql extension for postgres support in laravel
+RUN apk add --no-cache postgresql-dev && docker-php-ext-install pdo_pgsql
+# enable the extension in the php.ini file
+RUN docker-php-ext-enable pdo_pgsql
+# restart apache
+RUN service apache2 restart
 
 RUN docker-php-ext-install pdo
 
