@@ -11,8 +11,6 @@ RUN apk update && apk add --update nodejs npm \
 RUN apk add --no-cache postgresql-dev && docker-php-ext-install pdo_pgsql
 # enable the extension in the php.ini file
 RUN docker-php-ext-enable pdo_pgsql
-# restart apache
-RUN service apache2 restart
 
 RUN docker-php-ext-install pdo
 
