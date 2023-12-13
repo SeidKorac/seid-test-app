@@ -7,7 +7,10 @@ RUN apk update && apk add --update nodejs npm \
     composer php-pdo_sqlite php-pdo_mysql php-pdo_pgsql php-simplexml php-fileinfo php-dom php-tokenizer php-xml php-xmlwriter php-session \
     openrc bash nginx
 
-# Install the required PHP extension for pgsql
+# Install PostgreSQL client and development files
+RUN apk add --no-cache postgresql-client postgresql-dev
+
+# Install the required PHP extensions
 RUN docker-php-ext-install pdo_pgsql
 
 COPY --chown=www-data:www-data web /app
