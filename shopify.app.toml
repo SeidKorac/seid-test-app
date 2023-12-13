@@ -1,0 +1,28 @@
+# Learn more about configuring your app at https://shopify.dev/docs/apps/tools/cli/configuration
+
+name = "seid-test-app"
+client_id = "769b886a38eb5f55386298f139950ff6"
+application_url = "https://breeds-governance-rocky-jerry.trycloudflare.com"
+embedded = true
+
+[access_scopes]
+# Learn more at https://shopify.dev/docs/apps/tools/cli/configuration#access_scopes
+scopes = "write_products"
+
+[auth]
+redirect_urls = [
+  "https://breeds-governance-rocky-jerry.trycloudflare.com/auth/callback",
+  "https://breeds-governance-rocky-jerry.trycloudflare.com/auth/shopify/callback",
+  "https://breeds-governance-rocky-jerry.trycloudflare.com/api/auth/callback",
+  "https://breeds-governance-rocky-jerry.trycloudflare.com/.shopify/graphiql/auth/callback"
+]
+
+[webhooks]
+api_version = "2023-10"
+
+[pos]
+embedded = false
+
+[build]
+automatically_update_urls_on_dev = true
+dev_store_url = "seid-lp-s.myshopify.com"
