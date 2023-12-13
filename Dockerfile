@@ -10,8 +10,8 @@ RUN apk update && apk add --update nodejs npm \
 RUN docker-php-ext-install pdo
 
 # Install PDO MySQL extension
-RUN apt-get update && \
-    apt-get install -y libonig-dev && \
+RUN apk update && \
+    apk install -y libonig-dev && \
     docker-php-ext-install pdo_mysql
 
 COPY --chown=www-data:www-data web /app
