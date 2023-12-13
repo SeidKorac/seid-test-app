@@ -1,4 +1,4 @@
-FROM php:8.2-fpm-alpine
+FROM php:8.2-fpm
 
 ARG SHOPIFY_API_KEY
 ENV SHOPIFY_API_KEY=$SHOPIFY_API_KEY
@@ -8,6 +8,11 @@ RUN apk update && apk add --update nodejs npm \
     openrc bash nginx
 
 RUN docker-php-ext-install pdo
+
+# Install PDO MySQL extension
+RUN apt-get update && \
+    apt-get install -y libonig-dev && \
+    docker-php-ext-install pdo_mysql
 
 COPY --chown=www-data:www-data web /app
 WORKDIR /app
