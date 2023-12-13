@@ -2,7 +2,7 @@
 
 name = "seid-test-app"
 client_id = "769b886a38eb5f55386298f139950ff6"
-application_url = "https://breeds-governance-rocky-jerry.trycloudflare.com"
+application_url = "https://wives-total-blvd-instances.trycloudflare.com"
 embedded = true
 
 [access_scopes]
@@ -11,10 +11,10 @@ scopes = "write_products"
 
 [auth]
 redirect_urls = [
-  "https://breeds-governance-rocky-jerry.trycloudflare.com/auth/callback",
-  "https://breeds-governance-rocky-jerry.trycloudflare.com/auth/shopify/callback",
-  "https://breeds-governance-rocky-jerry.trycloudflare.com/api/auth/callback",
-  "https://breeds-governance-rocky-jerry.trycloudflare.com/.shopify/graphiql/auth/callback"
+  "https://wives-total-blvd-instances.trycloudflare.com/auth/callback",
+  "https://wives-total-blvd-instances.trycloudflare.com/auth/shopify/callback",
+  "https://wives-total-blvd-instances.trycloudflare.com/api/auth/callback",
+  "https://wives-total-blvd-instances.trycloudflare.com/.shopify/graphiql/auth/callback"
 ]
 
 [webhooks]
