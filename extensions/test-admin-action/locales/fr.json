@@ -1,0 +1,4 @@
+{
+  "name": "test-admin-action",
+  "welcome": "Bienvenue dans l'extension {{target}}!"
+}
